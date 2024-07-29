@@ -1,7 +1,19 @@
 import { Inter } from "next/font/google";
 import "../globals.css";
+import { i18nConfig } from '@/i18nConfig'
 
 const inter = Inter({ subsets: ["latin"] });
+
+export async function generateStaticParams() {
+  // Get all locales
+  const locales = i18nConfig.locales
+  // Generate static paths for all locales
+  return locales.map(locale => {
+    return {
+      locale: locale,
+    }
+  })
+}
 
 export const metadata = {
   title: "Create Next App",
