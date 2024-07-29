@@ -1,18 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function Home() {
-  
-  // sample function for async data fetching
-  const fetchData = async () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve("Data fetched!");
-      }, 1000);
-    });
-  };
-
-  const data = await fetchData();
+export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
